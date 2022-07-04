@@ -1,33 +1,19 @@
 import data from './data/rickandmorty/rickandmorty.js';
+import app from './data.js';
 
-const buscador = document.getElementById("buscador")
-const content = document.getElementById("content")
-const selectPersonajes = document.getElementById("selectPersonajes")
+const buscador = document.getElementById("buscador");
+const selectPersonajes = document.getElementById("selectPersonajes");
+const selectEpisodios = document.getElementById("selectEpisodios");
+const selectEspecie = document.getElementById("selectEspecie");
 
-const personajes = data.results
+app.inciar()
 
-// change nos regala informacion
-// cuando sucede algo
-// y es gratis.......
-// te la manda en forma de regalito, como argumento!!!!
-// el regalo es :ooooooo
-// la informacion de lo que suecede en el evento
-selectPersonajes.addEventListener("change", function (event) {
-    const opcionSeleccionada = event.target.value
+app.buscador(buscador)
 
-    if (opcionSeleccionada == "ah") {
+// para el buscador
 
-        content.innerHTML = ""
+// para el desplegable de los personajes
 
-        // para recorrer arrays
-        personajes.forEach(function (personaje){
-            
-            //personaje.name
+// para el desplegable de las especies
 
-            let html = `<div><h3>${personaje.name}</h3><img src="${personaje.image}" /></div>`
-            content.insertAdjacentHTML("beforeend", html)
-        })
-    }
-
-})
-
+// para el desplegable de los episodios
